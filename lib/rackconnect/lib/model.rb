@@ -7,6 +7,15 @@ class Rackconnect::Model
       @endpoint = block_given? ? yield(block) : str
     end
 
+    def endpoint_vars(*args)
+      # Inject into class level of descendant class
+      self.class.module_eval{ attr_accessor *args }
+    end
+
+    def attributes(*args)
+      attr_accessor *args
+    end
+
     def all(*args)
       apply(args)
       resp = Rackconnect::Request.get(endpoint)

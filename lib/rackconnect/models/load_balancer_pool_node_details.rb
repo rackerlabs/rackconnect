@@ -1,11 +1,7 @@
 class Rackconnect::LoadBalancerPoolNodeDetails < Rackconnect::Model
 
-  class << self
-    attr_accessor :pool_id, :node_id
-  end
-
+  endpoint_vars :pool_id, :node_id
   restful_endpoint { "/load_balancer_pools/#{pool_id}/nodes/#{node_id}/details" }
-
-  attr_accessor :created, :cloud_server, :id, :load_balancer_pool, :status, :status_detail, :updated
+  attributes :created, :cloud_server, :id, :load_balancer_pool, :status, :status_detail, :updated
 
 end
