@@ -9,13 +9,13 @@ class Rackconnect::Model
 
     def all(*args)
       apply(args)
-      resp = Rackconnect::Request.new({verb: :get, path: @endpoint})
+      resp = Rackconnect::Request.get(endpoint)
       resp.body.map{ |obj| self.new(json: obj) }
     end
 
     def find(*args)
       id = apply(args)
-      resp = Rackconnect::Request.new({verb: :get, path: "#{@endpoint}/#{id}"})
+      resp = Rackconnect::Request.get("#{endpoint}/#{id}")
       self.new(json: resp.body)
     end
 

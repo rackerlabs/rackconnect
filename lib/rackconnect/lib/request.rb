@@ -1,5 +1,13 @@
 class Rackconnect::Request
 
+  class << self
+
+    def get(path, options={})
+      self.new(options.merge({verb: :get, path: path}))
+    end
+
+  end
+
   attr_accessor :body
 
   def initialize(options={})
