@@ -1,25 +1,9 @@
 module Rackconnect
 
   class << self
-    @@token     = nil
-    @@tenant_id = nil
-
-    def token=(token)
-      @@token = token
-    end
-
-    def tenant_id=(tenant_id)
-      @@tenant_id = tenant_id
-    end
-
-    def token
-      @@token
-    end
-
-    def tenant_id
-      @@tenant_id
-    end
+    attr_accessor :token, :tenant_id
   end
+
 end
 
 # Load after token/tenant_id setup
