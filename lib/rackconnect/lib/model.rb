@@ -1,6 +1,21 @@
-class Rackconnect::Model
+module Rackconnect::Model
 
-  class << self
+  def self.included(base)
+    base.send :include, InstanceMethods
+    base.extend ClassMethods
+  end
+
+  module InstanceMethods
+    def initialize(options={})
+      if options[:json] != nil
+        options[:json].each do |(k,v)|
+          self.send("#{k}=", v)
+        end
+      end
+    end
+  end
+
+  module ClassMethods
     def endpoint(str=nil, options={}, &block)
       @_endpoint = block_given? ? yield(block) : str
     end
@@ -44,13 +59,4 @@ class Rackconnect::Model
       end
     end
   end
-
-  def initialize(options={})
-    if options[:json] != nil
-      options[:json].each do |(k,v)|
-        self.send("#{k}=", v)
-      end
-    end
-  end
-
 end

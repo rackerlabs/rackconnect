@@ -1,4 +1,5 @@
-class Rackconnect::ServerGroupDetails < Rackconnect::Model
+class Rackconnect::ServerGroupDetails
+  include Rackconnect::Model
 
   endpoint_vars :group_id
   endpoint { "/server_groups/#{group_id}/nodes/details" }

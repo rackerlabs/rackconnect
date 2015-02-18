@@ -1,4 +1,5 @@
-class Rackconnect::ServerGroupNodeDetails < Rackconnect::Model
+class Rackconnect::ServerGroupNodeDetails
+  include Rackconnect::Model
 
   attributes :created, :cloud_server, :id, :server_group, :status, :status_detail, :updated
   endpoint_vars :group_id, :node_id

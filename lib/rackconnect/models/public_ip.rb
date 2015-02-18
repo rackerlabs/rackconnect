@@ -1,4 +1,5 @@
-class Rackconnect::PublicIP < Rackconnect::Model
+class Rackconnect::PublicIP
+  include Rackconnect::Model
 
   endpoint "/public_ips"
   attributes :created, :cloud_server, :id, :public_ip_v4, :status, :status_detail, :updated

@@ -1,4 +1,5 @@
-class Rackconnect::LoadBalancerPoolDetails < Rackconnect::Model
+class Rackconnect::LoadBalancerPoolDetails
+  include Rackconnect::Model
 
   endpoint_vars :pool_id
   endpoint { "/load_balancer_pools/#{pool_id}/nodes/details" }
