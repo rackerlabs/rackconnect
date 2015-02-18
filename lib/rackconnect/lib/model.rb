@@ -1,10 +1,8 @@
 class Rackconnect::Model
 
   class << self
-    attr_accessor :endpoint
-
-    def restful_endpoint(str=nil, &block)
-      @endpoint = block_given? ? yield(block) : str
+    def endpoint(str=nil, options={}, &block)
+      @_endpoint = block_given? ? yield(block) : str
     end
 
     def endpoint_vars(*args)
@@ -18,13 +16,13 @@ class Rackconnect::Model
 
     def all(*args)
       apply(args)
-      resp = Rackconnect::Request.get(endpoint)
+      resp = Rackconnect::Request.get(@_endpoint)
       resp.body.map{ |obj| self.new(json: obj) }
     end
 
     def find(*args)
       id = apply(args)
-      resp = Rackconnect::Request.get("#{endpoint}/#{id}")
+      resp = Rackconnect::Request.get("#{@_endpoint}/#{id}")
       self.new(json: resp.body)
     end
 
