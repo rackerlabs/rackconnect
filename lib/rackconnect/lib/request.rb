@@ -1,8 +1,4 @@
-require 'pry'
-
 class Rackconnect::Request
-
-  ROOT = "http://private-12275-rcv3.apiary-mock.com"
 
   attr_accessor :body
 
@@ -18,10 +14,12 @@ class Rackconnect::Request
     elsif verb == nil || path == nil
       raise "Need verb and path (Rackconnect::Request.new({verb: :get, path: \"google.com\"}))"
     else
+      url = Rackconnect::RACKCONNECT_URL + path
+
       if verb == :get
-        resp = RestClient.get(ROOT + path)
+        resp = RestClient.get(url)
       else
-        resp = RestClient.send(verb, ROOT + path, params, content_type: :json, accept: :json)
+        resp = RestClient.send(verb, url, params, content_type: :json, accept: :json)
       end
 
       # TODO: Total hack. Bad API ATM.

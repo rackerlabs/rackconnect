@@ -13,7 +13,7 @@ class Rackconnect::Auth
       }
     }.to_json
 
-    resp = RestClient.post "https://identity.api.rackspacecloud.com/v2.0/tokens", params, content_type: :json, accept: :json
+    resp = RestClient.post Rackconnect::IDENTITY_URL, params, content_type: :json, accept: :json
     body = JSON.parse(resp)
 
     Rackconnect.token     = body["access"]["token"]["id"]
