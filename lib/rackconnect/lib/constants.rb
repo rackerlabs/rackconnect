@@ -4,4 +4,3 @@ module Rackconnect
   RACKCONNECT_URL = "http://private-12275-rcv3.apiary-mock.com"
 
 end
-

@@ -21,4 +21,5 @@ describe Rackconnect::CloudNetwork do
   it "is findable" do
     expect(network.nil?).to eq(false)
   end
+
 end

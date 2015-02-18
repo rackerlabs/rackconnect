@@ -3,8 +3,8 @@ class Rackconnect::Model
   class << self
     attr_accessor :endpoint
 
-    def restful_endpoint(&block)
-      @endpoint = yield(block)
+    def restful_endpoint(str=nil, &block)
+      @endpoint = block_given? ? yield(block) : str
     end
 
     def all(*args)
