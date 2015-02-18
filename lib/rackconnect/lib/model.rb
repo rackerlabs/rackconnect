@@ -7,7 +7,8 @@ class Rackconnect::Model
       @endpoint = str
     end
 
-    def all
+    def all(parent_id=nil)
+      self.parent_id = parent_id unless parent_id.nil?
       resp = Rackconnect::Request.new({verb: :get, path: @endpoint})
       resp.body.map{ |obj| self.new(json: obj) }
     end
