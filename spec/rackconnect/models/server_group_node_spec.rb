@@ -34,4 +34,5 @@ describe Rackconnect::ServerGroupNode do
       expect(server_group_node.destroy).to be(true)
     end
   end
+
 end

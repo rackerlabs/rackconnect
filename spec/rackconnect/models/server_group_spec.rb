@@ -35,4 +35,19 @@ describe Rackconnect::ServerGroup do
     end
   end
 
+  it "can bulk add nodes" do
+    VCR.use_cassette('server_group_bulk_add_nodes') do
+      nodes = server_group.add_nodes(["d95ae0c4-6ab8-4873-b82f-f8433840cff2"])
+      expect(nodes.count).to eq(2)
+    end
+  end
+
+  it "can bulk remove nodes" do
+    VCR.use_cassette('server_group_bulk_remove_nodes') do
+      nodes = server_group.add_nodes(["d95ae0c4-6ab8-4873-b82f-f8433840cff2"])
+      resp = server_group.remove_nodes(["d95ae0c4-6ab8-4873-b82f-f8433840cff2"])
+      expect(resp).to eq(true)
+    end
+  end
+
 end
