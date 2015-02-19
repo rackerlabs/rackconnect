@@ -13,6 +13,11 @@ module Rackconnect::Model
         end
       end
     end
+
+    def destroy
+      path = self.class.instance_variable_get("@_endpoint") + "/#{self.id}" # sorry
+      resp = Rackconnect::Request.delete(path)
+    end
   end
 
   module ClassMethods

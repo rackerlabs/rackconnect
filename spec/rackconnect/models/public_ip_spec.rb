@@ -36,4 +36,10 @@ describe Rackconnect::PublicIP do
     end
   end
 
+  it "is destroyable" do
+    VCR.use_cassette('public_ip_destroy') do
+      expect(public_ip.destroy).to be(true)
+    end
+  end
+
 end

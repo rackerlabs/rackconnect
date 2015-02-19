@@ -25,13 +25,13 @@ http_interactions:
       X-Apiary-Ratelimit-Limit:
       - '120'
       X-Apiary-Ratelimit-Remaining:
-      - '119'
+      - '103'
       Content-Type:
       - application/json
       X-Apiary-Transaction-Id:
-      - 54e602cc1bd66f030068516e
+      - 54e628981bd66f0300687c49
       Date:
-      - Thu, 19 Feb 2015 15:35:40 GMT
+      - Thu, 19 Feb 2015 18:16:56 GMT
       Transfer-Encoding:
       - chunked
       Via:
@@ -64,5 +64,5 @@ http_interactions:
             }
         ]
     http_version: 
-  recorded_at: Thu, 19 Feb 2015 15:35:40 GMT
+  recorded_at: Thu, 19 Feb 2015 18:16:56 GMT
 recorded_with: VCR 2.9.3

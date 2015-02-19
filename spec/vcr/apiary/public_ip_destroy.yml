@@ -1,8 +1,8 @@
 ---
 http_interactions:
 - request:
-    method: get
-    uri: http://private-12275-rcv3.apiary-mock.com/v3/930035/cloud_networks/07426958-1ebf-4c38-b032-d456820ca21a
+    method: delete
+    uri: http://private-12275-rcv3.apiary-mock.com/v3/930035/public_ips/2d0f586b-37a7-4ae0-adac-2743d5feb450
     body:
       encoding: US-ASCII
       string: ''
@@ -15,8 +15,8 @@ http_interactions:
       - Ruby
   response:
     status:
-      code: 200
-      message: OK
+      code: 204
+      message: No Content
     headers:
       Server:
       - Cowboy
@@ -25,27 +25,18 @@ http_interactions:
       X-Apiary-Ratelimit-Limit:
       - '120'
       X-Apiary-Ratelimit-Remaining:
-      - '117'
-      Content-Type:
-      - application/json
+      - '101'
       X-Apiary-Transaction-Id:
-      - 54e6289332f1a00300a3e5a0
+      - 54e62899ab018303006243e6
       Date:
-      - Thu, 19 Feb 2015 18:16:51 GMT
+      - Thu, 19 Feb 2015 18:16:57 GMT
       Transfer-Encoding:
       - chunked
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: |-
-        {
-            "cidr": "192.168.100.0/24",
-            "created": "2014-05-25T01:23:42Z",
-            "id": "07426958-1ebf-4c38-b032-d456820ca21a",
-            "name": "RC-CLOUD",
-            "updated": "2014-05-25T02:28:44Z"
-        }
+      string: ''
     http_version: 
-  recorded_at: Thu, 19 Feb 2015 18:16:51 GMT
+  recorded_at: Thu, 19 Feb 2015 18:16:57 GMT
 recorded_with: VCR 2.9.3

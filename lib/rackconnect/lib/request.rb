@@ -10,6 +10,11 @@ class Rackconnect::Request
       self.new(options.merge({verb: :post, path: path}))
     end
 
+    def delete(path)
+      self.new({verb: :delete, path: path})
+      true
+    end
+
   end
 
   attr_accessor :body
@@ -30,13 +35,17 @@ class Rackconnect::Request
 
       if verb == :get
         resp = RestClient.get(url)
-      else
-        resp = RestClient.send(verb, url, body, content_type: :json, accept: :json)
+      elsif verb == :post
+        resp = RestClient.post(url, body, content_type: :json, accept: :json)
+      elsif verb == :delete
+        resp = RestClient.delete(url)
       end
 
       # TODO: Total hack. Bad API ATM.
 
-      self.body = JSON.parse(resp.gsub(/\"ACTIVE,/, '"ACTIVE",').gsub(/null"/, "null"))
+      unless resp.code == 204
+        self.body = JSON.parse(resp.gsub(/\"ACTIVE,/, '"ACTIVE",').gsub(/null"/, "null"))
+      end
     end
   end
 

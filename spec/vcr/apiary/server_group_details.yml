@@ -25,13 +25,13 @@ http_interactions:
       X-Apiary-Ratelimit-Limit:
       - '120'
       X-Apiary-Ratelimit-Remaining:
-      - '107'
+      - '100'
       Content-Type:
       - application/json
       X-Apiary-Transaction-Id:
-      - 54e56eb3c54b07030020f8ac
+      - 54e6289932f1a00300a3e5a6
       Date:
-      - Thu, 19 Feb 2015 05:03:47 GMT
+      - Thu, 19 Feb 2015 18:16:57 GMT
       Transfer-Encoding:
       - chunked
       Via:
@@ -88,5 +88,5 @@ http_interactions:
         \"Unable to communicate with network device\",\n        \"updated\": \"2014-05-31T08:24:36Z\"\n
         \   }\n]"
     http_version: 
-  recorded_at: Thu, 19 Feb 2015 05:03:47 GMT
+  recorded_at: Thu, 19 Feb 2015 18:16:57 GMT
 recorded_with: VCR 2.9.3

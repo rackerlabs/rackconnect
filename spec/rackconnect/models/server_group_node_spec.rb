@@ -28,4 +28,10 @@ describe Rackconnect::ServerGroupNode do
       expect(obj.id.nil?).to be(false)
     end
   end
+
+  it "is destroyable" do
+    VCR.use_cassette('server_group_node_destroy') do
+      expect(server_group_node.destroy).to be(true)
+    end
+  end
 end

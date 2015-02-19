@@ -29,4 +29,10 @@ describe Rackconnect::ServerGroup do
     end
   end
 
+  it "is destroyable" do
+    VCR.use_cassette('server_group_destroy') do
+      expect(server_group.destroy).to be(true)
+    end
+  end
+
 end

@@ -29,13 +29,13 @@ http_interactions:
       X-Apiary-Ratelimit-Limit:
       - '120'
       X-Apiary-Ratelimit-Remaining:
-      - '119'
+      - '115'
       Content-Type:
       - application/json
       X-Apiary-Transaction-Id:
-      - 54e6237ac54b07030021cda5
+      - 54e6289e1bd66f0300687c50
       Date:
-      - Thu, 19 Feb 2015 17:55:06 GMT
+      - Thu, 19 Feb 2015 18:17:02 GMT
       Transfer-Encoding:
       - chunked
       Via:
@@ -48,5 +48,5 @@ http_interactions:
         \"5a79cb9a-f086-4714-8d5f-cd3b31e6687a\"\n        },\n    \"status\": \"ADDING\",\n
         \   \"status_detail\": null,\n    \"updated\": null\n}"
     http_version: 
-  recorded_at: Thu, 19 Feb 2015 17:55:06 GMT
+  recorded_at: Thu, 19 Feb 2015 18:17:02 GMT
 recorded_with: VCR 2.9.3
