@@ -29,6 +29,10 @@ module Rackconnect::Model
       attr_accessor *args
     end
 
+    def bulk_path(str)
+      @_bulk_endpoint = str
+    end
+
     def all(*args)
       apply(args)
       resp = Rackconnect::Request.get(@_endpoint)

@@ -35,4 +35,11 @@ describe Rackconnect::ServerGroupNodeDetails do
     expect(server_group_node_details.nil?).to eq(false)
   end
 
+  it "can get details for a server" do
+    VCR.use_cassette('sgnd_for_server') do
+      id = "07426958-1ebf-4c38-b032-d456820ca21a"
+      expect(Rackconnect::ServerGroupNodeDetails.for_server(id).created.nil?).to eq(false)
+    end
+  end
+
 end

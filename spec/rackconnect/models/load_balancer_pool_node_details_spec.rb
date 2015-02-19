@@ -35,4 +35,11 @@ describe Rackconnect::LoadBalancerPoolNodeDetails do
     expect(load_balancer_pool_node_details.nil?).to eq(false)
   end
 
+  it "can get details for a server" do
+    VCR.use_cassette('lbpnd_get_details') do
+      id = "1860451d-fb89-45b8-b54e-151afceb50e5"
+      expect(Rackconnect::LoadBalancerPoolNodeDetails.for_server(id).created.nil?).to eq(false)
+    end
+  end
+
 end
