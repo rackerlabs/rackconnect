@@ -28,4 +28,12 @@ describe Rackconnect::PublicIP do
     end
   end
 
+  it "is creatable" do
+    VCR.use_cassette('public_ip_create') do
+      # TODO: This is a bit bothersome?
+      obj = Rackconnect::PublicIP.create({})
+      expect(obj.id.nil?).to be(false)
+    end
+  end
+
 end

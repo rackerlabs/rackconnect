@@ -21,4 +21,11 @@ describe Rackconnect::LoadBalancerPoolNode do
     expect(load_balancer_pool_node.nil?).to eq(false)
   end
 
+  it "is creatable" do
+    VCR.use_cassette('lbpn_create') do
+      # TODO: This is a bit bothersome?
+      obj = Rackconnect::LoadBalancerPoolNode.create({})
+      expect(obj.id.nil?).to be(false)
+    end
+  end
 end

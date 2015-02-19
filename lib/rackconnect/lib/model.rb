@@ -29,10 +29,6 @@ module Rackconnect::Model
       attr_accessor *args
     end
 
-    def bulk_path(str)
-      @_bulk_endpoint = str
-    end
-
     def all(*args)
       apply(args)
       resp = Rackconnect::Request.get(@_endpoint)
@@ -42,6 +38,11 @@ module Rackconnect::Model
     def find(*args)
       id = apply(args)
       resp = Rackconnect::Request.get("#{@_endpoint}/#{id}")
+      self.new(json: resp.body)
+    end
+
+    def create(options={})
+      resp = Rackconnect::Request.post(@_endpoint, body: options.to_json)
       self.new(json: resp.body)
     end
 

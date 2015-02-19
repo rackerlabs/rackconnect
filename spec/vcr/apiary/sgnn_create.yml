@@ -1,0 +1,52 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://private-12275-rcv3.apiary-mock.com/v3/930035/server_groups//nodes
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '2'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Apiary-Ratelimit-Limit:
+      - '120'
+      X-Apiary-Ratelimit-Remaining:
+      - '119'
+      Content-Type:
+      - application/json
+      X-Apiary-Transaction-Id:
+      - 54e6237ac54b07030021cda5
+      Date:
+      - Thu, 19 Feb 2015 17:55:06 GMT
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: "{\n    \"created\": \"2014-05-30T03:23:42Z\",\n    \"cloud_server\":
+        {\n        \"id\": \"d95ae0c4-6ab8-4873-b82f-f8433840cff2\"\n    }, \n    \"id\":
+        \"61dd2626-ae0d-4a64-b59e-c54e101dbe22\",\n    \"server_group\": {\n            \"id\":
+        \"5a79cb9a-f086-4714-8d5f-cd3b31e6687a\"\n        },\n    \"status\": \"ADDING\",\n
+        \   \"status_detail\": null,\n    \"updated\": null\n}"
+    http_version: 
+  recorded_at: Thu, 19 Feb 2015 17:55:06 GMT
+recorded_with: VCR 2.9.3

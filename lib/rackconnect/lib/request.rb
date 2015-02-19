@@ -6,6 +6,10 @@ class Rackconnect::Request
       self.new(options.merge({verb: :get, path: path}))
     end
 
+    def post(path, options={})
+      self.new(options.merge({verb: :post, path: path}))
+    end
+
   end
 
   attr_accessor :body
@@ -13,7 +17,7 @@ class Rackconnect::Request
   def initialize(options={})
     verb    = options[:verb]
     path    = options[:path]
-    params  = options[:params].to_json
+    body    = options[:body]
     headers = options[:headers] || {}
     headers.merge({"X-Auth-Token" => Rackconnect.token})
 
@@ -27,7 +31,7 @@ class Rackconnect::Request
       if verb == :get
         resp = RestClient.get(url)
       else
-        resp = RestClient.send(verb, url, params, content_type: :json, accept: :json)
+        resp = RestClient.send(verb, url, body, content_type: :json, accept: :json)
       end
 
       # TODO: Total hack. Bad API ATM.

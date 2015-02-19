@@ -21,4 +21,12 @@ describe Rackconnect::ServerGroup do
     expect(server_group.nil?).to eq(false)
   end
 
+  it "is creatable" do
+    VCR.use_cassette('server_group_create') do
+      # TODO: This is a bit bothersome?
+      obj = Rackconnect::ServerGroup.create({})
+      expect(obj.id.nil?).to be(false)
+    end
+  end
+
 end
