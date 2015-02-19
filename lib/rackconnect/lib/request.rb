@@ -18,7 +18,7 @@ class Rackconnect::Request
     headers.merge({"X-Auth-Token" => Rackconnect.token})
 
     if Rackconnect.token == nil
-      raise "Please authenticate first. (Rackconnect::User.auth)"
+      raise "Please authenticate first. (Rackconnect::Auth)"
     elsif verb == nil || path == nil
       raise "Need verb and path (Rackconnect::Request.new({verb: :get, path: \"google.com\"}))"
     else
@@ -31,6 +31,7 @@ class Rackconnect::Request
       end
 
       # TODO: Total hack. Bad API ATM.
+
       self.body = JSON.parse(resp.gsub(/\"ACTIVE,/, '"ACTIVE",').gsub(/null"/, "null"))
     end
   end

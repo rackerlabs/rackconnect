@@ -29,9 +29,9 @@ http_interactions:
       Content-Type:
       - application/json
       X-Apiary-Transaction-Id:
-      - 54e4ffcc314f6b0300dd6b9d
+      - 54e56eb0b369880300ad9dde
       Date:
-      - Wed, 18 Feb 2015 21:10:36 GMT
+      - Thu, 19 Feb 2015 05:03:44 GMT
       Transfer-Encoding:
       - chunked
       Via:
@@ -47,5 +47,5 @@ http_interactions:
             "updated": "2014-05-25T02:28:44Z"
         }
     http_version: 
-  recorded_at: Wed, 18 Feb 2015 21:10:36 GMT
+  recorded_at: Thu, 19 Feb 2015 05:03:44 GMT
 recorded_with: VCR 2.9.3

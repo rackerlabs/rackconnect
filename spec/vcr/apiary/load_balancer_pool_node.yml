@@ -1,0 +1,48 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://private-12275-rcv3.apiary-mock.com/v3/930035/load_balancer_pools//nodes/1860451d-fb89-45b8-b54e-151afceb50e5
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Apiary-Ratelimit-Limit:
+      - '120'
+      X-Apiary-Ratelimit-Remaining:
+      - '113'
+      Content-Type:
+      - application/json
+      X-Apiary-Transaction-Id:
+      - 54e56eb2ab01830300616b76
+      Date:
+      - Thu, 19 Feb 2015 05:03:46 GMT
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: "{\n    \"created\": \"2014-05-30T03:23:42Z\",\n    \"cloud_server\":
+        {\n        \"id\": \"d95ae0c4-6ab8-4873-b82f-f8433840cff2\"\n    }, \n    \"id\":
+        \"1860451d-fb89-45b8-b54e-151afceb50e5\",\n    \"load_balancer_pool\": {\n
+        \       \"id\": \"d6d3aa7c-dfa5-4e61-96ee-1d54ac1075d2\"\n    },\n    \"status\":
+        \"ACTIVE\",\n    \"status_detail\": null,\n    \"updated\": \"2014-05-30T03:24:18Z\"\n}"
+    http_version: 
+  recorded_at: Thu, 19 Feb 2015 05:03:46 GMT
+recorded_with: VCR 2.9.3

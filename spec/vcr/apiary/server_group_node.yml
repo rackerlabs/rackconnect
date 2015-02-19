@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://private-12275-rcv3.apiary-mock.com/v3/930035/cloud_networks
+    uri: http://private-12275-rcv3.apiary-mock.com/v3/930035/server_groups//nodes/61dd2626-ae0d-4a64-b59e-c54e101dbe22
     body:
       encoding: US-ASCII
       string: ''
@@ -25,29 +25,24 @@ http_interactions:
       X-Apiary-Ratelimit-Limit:
       - '120'
       X-Apiary-Ratelimit-Remaining:
-      - '119'
+      - '103'
       Content-Type:
       - application/json
       X-Apiary-Transaction-Id:
-      - 54e56eb0ab01830300616b72
+      - 54e56eb4ab01830300616b7a
       Date:
-      - Thu, 19 Feb 2015 05:03:44 GMT
+      - Thu, 19 Feb 2015 05:03:48 GMT
       Transfer-Encoding:
       - chunked
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: |-
-        [
-            {
-                "cidr": "192.168.100.0/24",
-                "created": "2014-05-25T01:23:42Z",
-                "id": "07426958-1ebf-4c38-b032-d456820ca21a",
-                "name": "RC-CLOUD",
-                "updated": "2014-05-25T02:28:44Z"
-            }
-        ]
+      string: "{\n    \"created\": \"2014-05-30T03:23:42Z\",\n    \"cloud_server\":
+        {\n        \"id\": \"d95ae0c4-6ab8-4873-b82f-f8433840cff2\"\n    }, \n    \"id\":
+        \"1860451d-fb89-45b8-b54e-151afceb50e5\",\n    \"server_group\": {\n        \"id\":
+        \"5a79cb9a-f086-4714-8d5f-cd3b31e6687a\"\n    },\n    \"status\": \"ACTIVE\",\n
+        \   \"status_detail\": null,\n    \"updated\": \"2014-05-30T03:24:18Z\"\n}"
     http_version: 
-  recorded_at: Thu, 19 Feb 2015 05:03:44 GMT
+  recorded_at: Thu, 19 Feb 2015 05:03:48 GMT
 recorded_with: VCR 2.9.3

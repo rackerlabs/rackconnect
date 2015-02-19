@@ -1,0 +1,85 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://private-12275-rcv3.apiary-mock.com/v3/930035/load_balancer_pools
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Apiary-Ratelimit-Limit:
+      - '120'
+      X-Apiary-Ratelimit-Remaining:
+      - '111'
+      Content-Type:
+      - application/json
+      X-Apiary-Transaction-Id:
+      - 54e56eb332f1a00300a30c9d
+      Date:
+      - Thu, 19 Feb 2015 05:03:47 GMT
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: |-
+        [
+            {
+                "id": "d6d3aa7c-dfa5-4e61-96ee-1d54ac1075d2",
+                "name": "RCv3Test",
+                "node_counts": {
+                    "cloud_servers": 3,
+                    "external": 4,
+                    "total": 7
+                },
+                "port": 80,
+                "status": "ACTIVE",
+                "status_detail": null,
+                "virtual_ip": "203.0.113.5"
+            },
+            {
+                "id": "33021100-4abf-4836-9080-465a6d87ab68",
+                "name": "RCv3Test2",
+                "node_counts": {
+                    "cloud_servers": 1,
+                    "external": 0,
+                    "total": 1
+                },
+                "port": 80,
+                "status": "ACTIVE",
+                "status_detail": null,
+                "virtual_ip": "203.0.113.7"
+            },
+            {
+                "id": "b644350a-301b-47b5-a411-c6e0f933c347",
+                "name": "RCv3Test3",
+                "node_counts": {
+                    "cloud_servers": 2,
+                    "external": 3,
+                    "total": 5
+                },
+                "port": 443,
+                "status": "ACTIVE,
+                "status_detail": null",
+                "virtual_ip": "203.0.113.15"
+            }
+        ]
+    http_version: 
+  recorded_at: Thu, 19 Feb 2015 05:03:47 GMT
+recorded_with: VCR 2.9.3
