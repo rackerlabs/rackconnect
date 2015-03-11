@@ -13,13 +13,12 @@ end
 
 RSpec.configure do |c|
   c.before(:suite) do
-    VCR.use_cassette(:auth) do
-      creds = YAML.load_file("/Users/mdarby/.fog")
+    creds = YAML.load_file("/Users/mdarby/.fog")
 
-      Rackconnect::Auth.new({
-        api_key: creds[:default][:rackspace_api_key],
-        username: creds[:default][:rackspace_username]
-      })
-    end
+    Rackconnect::Auth.new({
+                            api_key: creds[:rackconnect][:rackspace_api_key],
+                            username: creds[:rackconnect][:rackspace_username],
+                            region: creds[:rackconnect][:rackspace_region]
+    })
   end
 end

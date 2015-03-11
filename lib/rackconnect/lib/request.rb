@@ -31,7 +31,7 @@ class Rackconnect::Request
     elsif verb == nil || path == nil
       raise "Need verb and path (Rackconnect::Request.new({verb: :get, path: \"google.com\"}))"
     else
-      url = Rackconnect::RACKCONNECT_URL + "/v3/#{Rackconnect.tenant_id}" + path
+      url = Rackconnect.url + path
 
       if verb == :get
         resp = RestClient.get(url)
