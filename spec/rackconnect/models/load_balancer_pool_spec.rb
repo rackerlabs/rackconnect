@@ -14,7 +14,7 @@ describe Rackconnect::LoadBalancerPool do
   end
 
   it "is indexable" do
-    expect(load_balancer_pools.count).to eq(3)
+    expect(load_balancer_pools.count).to eq(12)
   end
 
   it "is findable" do

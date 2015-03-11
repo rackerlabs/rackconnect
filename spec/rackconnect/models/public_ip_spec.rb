@@ -14,7 +14,7 @@ describe Rackconnect::PublicIP do
   end
 
   it "is indexable" do
-    expect(public_ips.count).to eq(1)
+    expect(public_ips.count).to eq(9)
   end
 
   it "is findable" do
