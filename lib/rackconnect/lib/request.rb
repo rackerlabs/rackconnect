@@ -24,7 +24,14 @@ class Rackconnect::Request
     path    = options[:path]
     body    = options[:body]
     headers = options[:headers] || {}
-    headers.merge({"X-Auth-Token" => Rackconnect.token})
+
+    headers.merge!(
+      {
+        "X-Auth-Token" => Rackconnect.token,
+        content_type: :json,
+        accept: :json
+      }
+    )
 
     if Rackconnect.token == nil
       raise "Please authenticate first. (Rackconnect::Auth)"
@@ -33,18 +40,16 @@ class Rackconnect::Request
     else
       url = Rackconnect.url + path
 
-      if verb == :get
-        resp = RestClient.get(url)
-      elsif verb == :post
-        resp = RestClient.post(url, body, content_type: :json, accept: :json)
-      elsif verb == :delete
-        resp = RestClient.delete(url)
+      if verb == :get || verb == :delete
+        resp = RestClient.send(verb, url, headers)
+      elsif verb == :post || verb == :put
+        resp = RestClient.send(verb, url, body, headers)
+      else
+        raise "The verb '#{verb}' is not recognized."
       end
 
-      # TODO: Total hack. Bad API ATM.
-
       unless resp.code == 204
-        self.body = JSON.parse(resp.gsub(/\"ACTIVE,/, '"ACTIVE",').gsub(/null"/, "null"))
+        self.body = JSON.parse(resp)
       end
     end
   end

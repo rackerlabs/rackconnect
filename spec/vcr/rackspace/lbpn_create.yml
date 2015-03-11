@@ -1,0 +1,51 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://iad.rackconnect.api.rackspacecloud.com/v3/886196/load_balancer_pools//nodes
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      X-Auth-Token:
+      - f423c01f9be64e4fa1c114c885183b54
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '2'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 500
+      message: Internal Server Error
+    headers:
+      Server:
+      - Apache-Coyote/1.1
+      Cache-Control:
+      - no-cache
+      Via:
+      - 1.1 Repose (Repose/3.0.1)
+      Expires:
+      - "-1"
+      Date:
+      - Wed, 11 Mar 2015 19:53:28 GMT
+      Pragma:
+      - no-cache
+      Content-Type:
+      - text/plain;charset=utf-8
+      Content-Length:
+      - '122'
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: 'An unexpected error has occurred. Please contact Support for assistance.  Request
+        Id: 76343bf1-8099-4e34-868e-8b9644c9d82b'
+    http_version: 
+  recorded_at: Wed, 11 Mar 2015 19:53:29 GMT
+recorded_with: VCR 2.9.3

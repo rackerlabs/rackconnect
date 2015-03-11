@@ -1,0 +1,46 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://iad.rackconnect.api.rackspacecloud.com/v3/886196/public_ips
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      X-Auth-Token:
+      - f423c01f9be64e4fa1c114c885183b54
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Apache-Coyote/1.1
+      Cache-Control:
+      - no-cache
+      Via:
+      - 1.1 Repose (Repose/3.0.1)
+      Expires:
+      - "-1"
+      Date:
+      - Wed, 11 Mar 2015 19:53:36 GMT
+      Pragma:
+      - no-cache
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '5929'
+    body:
+      encoding: UTF-8
+      string: '[{"created":"2014-10-15T20:56:47.26Z","cloud_server":{"cloud_network":{"cidr":null,"created":"0001-01-01T00:00:00Z","name":null,"updated":null,"id":"00000000-0000-0000-0000-000000000000"},"created":"2014-10-15T20:56:43.43Z","name":"SR-Test-20141015-a","updated":"2014-10-22T14:31:29.157Z","id":"77e8373a-0e3c-4517-aefb-7d3eb2b66cdd"},"id":"5002e073-8bdd-4d40-b89c-1b6a049e075d","configuration_to_cloud_account_uuid":"294f943d-f189-e311-9829-a0369f180f43","public_ip_v4":null,"status":"ADDING","status_detail":null,"updated":null,"retain":false,"failure_core_ticket_uuid":"00000000-0000-0000-0000-000000000000"},{"created":"2014-07-01T15:13:03.833Z","cloud_server":{"cloud_network":{"cidr":"192.168.59.0/24","created":"2014-04-08T19:03:40.887Z","name":"RC-RC-CLOUD","private_ip_v4":"192.168.59.7","updated":"2014-10-24T21:30:54.94Z","id":"07426958-1ebf-4c38-b032-d456820ca21a"},"created":"2014-07-01T15:12:45.037Z","name":"Rakesh-Demo","updated":"2014-07-09T17:52:21.03Z","id":"efca5e7d-bb2c-44fd-9c47-0e08866dd84b"},"id":"bc8101b7-f470-4092-9887-9e17ed4eda81","configuration_to_cloud_account_uuid":"294f943d-f189-e311-9829-a0369f180f43","public_ip_v4":"23.253.129.153","status":"ACTIVE","status_detail":null,"updated":"2014-09-10T13:46:02.617Z","retain":false,"failure_core_ticket_uuid":"00000000-0000-0000-0000-000000000000"},{"created":"2014-10-15T05:20:36.023Z","cloud_server":{"cloud_network":{"cidr":"192.168.59.0/24","created":"2014-04-08T19:03:40.887Z","name":"RC-RC-CLOUD","private_ip_v4":"192.168.59.7","updated":"2014-10-24T21:30:54.94Z","id":"07426958-1ebf-4c38-b032-d456820ca21a"},"created":"2014-10-15T05:20:35.6Z","name":"aq-test-20141014-2","updated":"2014-10-22T03:32:04.87Z","id":"a790b55a-2a77-4c54-923c-082bb0d3930f"},"id":"d7bacd16-6d82-4107-8128-fdce5cbc6b99","configuration_to_cloud_account_uuid":"294f943d-f189-e311-9829-a0369f180f43","public_ip_v4":null,"status":"REMOVE_FAILED","status_detail":null,"updated":"2014-10-15T05:36:02.48Z","retain":false,"failure_core_ticket_uuid":"00000000-0000-0000-0000-000000000000"},{"created":"2015-03-11T05:28:42.09Z","cloud_server":{"cloud_network":{"cidr":"192.168.59.0/24","created":"2014-04-08T19:03:40.887Z","name":"RC-RC-CLOUD","private_ip_v4":"192.168.59.21","updated":"2014-10-24T21:30:54.94Z","id":"07426958-1ebf-4c38-b032-d456820ca21a"},"created":"2015-03-11T04:58:02.06Z","name":"SR-Test-20150310-f","updated":"2015-03-11T05:28:50.827Z","id":"db1a30f5-d6de-4754-bd87-67ab0b072d49"},"id":"654f990d-ef25-46e0-ac73-fff09e9a6ebd","configuration_to_cloud_account_uuid":"294f943d-f189-e311-9829-a0369f180f43","public_ip_v4":null,"status":"ADD_FAILED","status_detail":null,"updated":"2015-03-11T05:30:23.467Z","retain":false,"failure_core_ticket_uuid":"00000000-0000-0000-0000-000000000000"},{"created":"2015-02-17T23:40:45.903Z","cloud_server":{"cloud_network":{"cidr":"192.168.59.0/24","created":"2014-04-08T19:03:40.887Z","name":"RC-RC-CLOUD","private_ip_v4":"192.168.59.62","updated":"2014-10-24T21:30:54.94Z","id":"07426958-1ebf-4c38-b032-d456820ca21a"},"created":"2015-02-17T23:39:35.357Z","name":"Jorge-IAD-Test","updated":"2015-02-17T23:40:53.27Z","id":"4193d81a-0318-4e09-89dc-c166c4027657"},"id":"c86a4f5f-9847-49da-850c-c11d5e3e7c9d","configuration_to_cloud_account_uuid":"294f943d-f189-e311-9829-a0369f180f43","public_ip_v4":"204.232.162.62","status":"ACTIVE","status_detail":null,"updated":"2015-02-17T23:40:53.247Z","retain":false,"failure_core_ticket_uuid":"00000000-0000-0000-0000-000000000000"},{"created":"2014-10-13T21:01:17.067Z","cloud_server":{"cloud_network":{"cidr":"192.168.59.0/24","created":"2014-04-08T19:03:40.887Z","name":"RC-RC-CLOUD","private_ip_v4":"192.168.59.6","updated":"2014-10-24T21:30:54.94Z","id":"07426958-1ebf-4c38-b032-d456820ca21a"},"created":"2014-10-13T19:58:13.807Z","name":"rl-Test","updated":"2014-10-22T03:15:59.66Z","id":"a9d7076b-c9fb-4de3-97b9-298283eef399"},"id":"eb8e7949-a697-4f44-b3a5-5576b71b8d54","configuration_to_cloud_account_uuid":"294f943d-f189-e311-9829-a0369f180f43","public_ip_v4":"207.97.217.204","status":"ACTIVE","status_detail":null,"updated":"2014-10-13T21:01:23.547Z","retain":false,"failure_core_ticket_uuid":"00000000-0000-0000-0000-000000000000"},{"created":"2015-03-11T03:55:22.337Z","cloud_server":{"cloud_network":{"cidr":"192.168.59.0/24","created":"2014-04-08T19:03:40.887Z","name":"RC-RC-CLOUD","private_ip_v4":"192.168.59.48","updated":"2014-10-24T21:30:54.94Z","id":"07426958-1ebf-4c38-b032-d456820ca21a"},"created":"2014-12-19T00:25:52.843Z","name":"autoscale_server-as74bed8da","updated":"2014-12-19T00:25:54.613Z","id":"61f3fc16-ba70-4e9c-99aa-25b0698a2489"},"id":"b8e5136f-9252-4da0-8ce4-63fc338c856b","configuration_to_cloud_account_uuid":"294f943d-f189-e311-9829-a0369f180f43","public_ip_v4":"104.130.32.226","status":"ACTIVE","status_detail":null,"updated":"2015-03-11T04:12:25.967Z","retain":true,"failure_core_ticket_uuid":"00000000-0000-0000-0000-000000000000"},{"created":"2014-11-06T16:03:55.243Z","cloud_server":{"cloud_network":{"cidr":null,"created":"0001-01-01T00:00:00Z","name":null,"updated":null,"id":"00000000-0000-0000-0000-000000000000"},"created":"2014-10-23T04:30:24.12Z","name":"chris-h-01","updated":"2014-12-03T20:39:23.103Z","id":"d64a5d71-6dcc-4e84-a787-8adbfe2eaed6"},"id":"1c75d785-9a7a-475e-81a6-8ad96d7427bc","configuration_to_cloud_account_uuid":"294f943d-f189-e311-9829-a0369f180f43","public_ip_v4":"204.232.162.59","status":"REMOVING","status_detail":null,"updated":"2014-12-03T20:39:22.143Z","retain":false,"failure_core_ticket_uuid":"00000000-0000-0000-0000-000000000000"},{"created":"2015-03-11T05:30:47.083Z","cloud_server":null,"id":"5325810e-0a70-4cc7-89db-29904861d2f2","configuration_to_cloud_account_uuid":"294f943d-f189-e311-9829-a0369f180f43","public_ip_v4":"104.130.51.76","status":"REMOVING","status_detail":null,"updated":"2015-03-11T05:44:24.99Z","retain":true,"failure_core_ticket_uuid":"00000000-0000-0000-0000-000000000000"}]'
+    http_version: 
+  recorded_at: Wed, 11 Mar 2015 19:53:37 GMT
+recorded_with: VCR 2.9.3

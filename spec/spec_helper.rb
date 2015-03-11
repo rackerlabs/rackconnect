@@ -7,7 +7,7 @@ require 'yaml'
 
 VCR.configure do |c|
   c.hook_into :webmock
-  c.cassette_library_dir = "spec/vcr/apiary"
+  c.cassette_library_dir = "spec/vcr/rackspace"
   c.allow_http_connections_when_no_cassette = true
 end
 
@@ -20,5 +20,9 @@ RSpec.configure do |c|
                             username: creds[:rackconnect][:rackspace_username],
                             region: creds[:rackconnect][:rackspace_region]
     })
+
+
+    require 'pry'
+    binding.pry
   end
 end

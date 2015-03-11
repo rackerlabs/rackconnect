@@ -1,0 +1,46 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://iad.rackconnect.api.rackspacecloud.com/v3/886196/load_balancer_pools
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      X-Auth-Token:
+      - f423c01f9be64e4fa1c114c885183b54
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Apache-Coyote/1.1
+      Cache-Control:
+      - no-cache
+      Via:
+      - 1.1 Repose (Repose/3.0.1)
+      Expires:
+      - "-1"
+      Date:
+      - Wed, 11 Mar 2015 19:53:25 GMT
+      Pragma:
+      - no-cache
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '2307'
+    body:
+      encoding: UTF-8
+      string: '[{"name":"raxqercmgd1-pool2","node_counts":{"cloud_servers":2,"external":5,"total":7},"port":0,"status":"ACTIVE","status_detail":null,"virtual_ip":null,"id":"d6060853-6432-44ca-a439-963779563f96"},{"name":"raxqercmgd1-pool3","node_counts":{"cloud_servers":1,"external":2,"total":3},"port":0,"status":"ACTIVE","status_detail":null,"virtual_ip":null,"id":"b946cf13-d8c1-45f6-962e-117f76382dd6"},{"name":"raxqercmgd1-pool1","node_counts":{"cloud_servers":1,"external":8,"total":9},"port":0,"status":"ACTIVE","status_detail":null,"virtual_ip":null,"id":"48fd212c-fe52-4a36-9f2d-e639c027322b"},{"name":"RCv3Test","node_counts":{"cloud_servers":2,"external":15,"total":17},"port":0,"status":"ACTIVE","status_detail":null,"virtual_ip":null,"id":"364b6c45-914d-422f-be30-3d18d612ecf4"},{"name":"raxqercmgd1-pool6","node_counts":{"cloud_servers":1,"external":1,"total":2},"port":0,"status":"ACTIVE","status_detail":null,"virtual_ip":null,"id":"2e791181-350f-47be-8d04-7958a4b0e3f5"},{"name":"raxqercmgd1-pool4","node_counts":{"cloud_servers":7,"external":1,"total":8},"port":0,"status":"ACTIVE","status_detail":null,"virtual_ip":null,"id":"1264f691-be02-45de-aa70-f4a38aafe1ca"},{"name":"raxqercmgd1-pool5","node_counts":{"cloud_servers":1,"external":2,"total":3},"port":0,"status":"ACTIVE","status_detail":null,"virtual_ip":null,"id":"6f83b67f-0847-4e23-a166-21bb3c4e8005"},{"name":"RCv3Chris","node_counts":{"cloud_servers":3,"external":8,"total":11},"port":0,"status":"ACTIVE","status_detail":null,"virtual_ip":null,"id":"0d8e9aaf-78e8-49cb-afd7-b12d7faa85c8"},{"name":"otter_test","node_counts":{"cloud_servers":1,"external":1,"total":2},"port":0,"status":"ACTIVE","status_detail":null,"virtual_ip":null,"id":"f7129c83-4d34-46b0-9c69-6dcdce2e741a"},{"name":"RCv3Juan","node_counts":{"cloud_servers":5,"external":1,"total":6},"port":0,"status":"ACTIVE","status_detail":null,"virtual_ip":null,"id":"4fe1b258-f7c9-4688-a3ab-0c90e654b958"},{"name":"RCv3Jorge","node_counts":{"cloud_servers":6,"external":8,"total":14},"port":0,"status":"ACTIVE","status_detail":null,"virtual_ip":null,"id":"cf2c0cc4-7631-4863-ad22-fb8fc2b6b80d"},{"name":"RCv3Ravi","node_counts":{"cloud_servers":2,"external":1,"total":3},"port":0,"status":"ACTIVE","status_detail":null,"virtual_ip":null,"id":"c2eb1b60-fd2f-43a6-bda1-63e594cdeb43"}]'
+    http_version: 
+  recorded_at: Wed, 11 Mar 2015 19:53:25 GMT
+recorded_with: VCR 2.9.3
