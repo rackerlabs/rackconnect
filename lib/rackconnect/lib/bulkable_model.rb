@@ -15,8 +15,7 @@ module Rackconnect::BulkableModel
     end
 
     def for_server(server_id)
-      resp = Rackconnect::Request.get(@_bulk_endpoint + "?cloud_server_id=#{server_id}")
-      self.new(json: resp.body.first)
+      Rackconnect::Request.get(@_bulk_endpoint + "?cloud_server_id=#{server_id}").body
     end
   end
 end

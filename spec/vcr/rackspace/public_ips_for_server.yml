@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://iad.rackconnect.api.rackspacecloud.com/v3/886196/public_ips?cloud_server_id=07426958-1ebf-4c38-b032-d456820ca21a
+    uri: https://iad.rackconnect.api.rackspacecloud.com/v3/886196/public_ips?cloud_server_id=5002e073-8bdd-4d40-b89c-1b6a049e075d
     body:
       encoding: US-ASCII
       string: ''
@@ -12,7 +12,7 @@ http_interactions:
       Accept-Encoding:
       - gzip, deflate
       X-Auth-Token:
-      - f423c01f9be64e4fa1c114c885183b54
+      - 81df37698744485a8465e0b1ffb58364
       Content-Type:
       - application/json
       User-Agent:
@@ -31,7 +31,7 @@ http_interactions:
       Expires:
       - "-1"
       Date:
-      - Wed, 11 Mar 2015 19:53:37 GMT
+      - Mon, 16 Mar 2015 14:02:35 GMT
       Pragma:
       - no-cache
       Content-Type:
@@ -42,5 +42,5 @@ http_interactions:
       encoding: UTF-8
       string: "[]"
     http_version: 
-  recorded_at: Wed, 11 Mar 2015 19:53:39 GMT
+  recorded_at: Mon, 16 Mar 2015 14:02:36 GMT
 recorded_with: VCR 2.9.3

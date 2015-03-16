@@ -14,6 +14,19 @@ module Rackconnect::Model
       end
     end
 
+    def save
+      path = self.class.instance_variable_get("@_endpoint")
+
+      if self.id.nil?
+        resp = Rackconnect::Request.post(path, body: self.to_json)
+      else
+        path += "/#{self.id}"
+        resp = Rackconnect::Request.put(path, body: self.to_json)
+      end
+
+      self.new(json: resp.body)
+    end
+
     def destroy
       path = self.class.instance_variable_get("@_endpoint") + "/#{self.id}" # sorry
       resp = Rackconnect::Request.delete(path)

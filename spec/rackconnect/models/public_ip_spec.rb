@@ -23,17 +23,19 @@ describe Rackconnect::PublicIP do
 
   it "can get details for a server" do
     VCR.use_cassette('public_ips_for_server') do
-      id = "07426958-1ebf-4c38-b032-d456820ca21a"
-      expect(Rackconnect::PublicIP.for_server(id).created.nil?).to eq(false)
+      expect(Rackconnect::PublicIP.for_server(public_ip.id)).to eq([])
     end
   end
 
   it "is creatable" do
-    VCR.use_cassette('public_ip_create') do
-      # TODO: This is a bit bothersome?
-      obj = Rackconnect::PublicIP.create({})
-      expect(obj.id.nil?).to be(false)
-    end
+    # VCR.use_cassette('public_ip_create') do
+    net = Rackconnect::CloudNetwork.all.first
+    obj = Rackconnect::PublicIP.new
+    obj.cloud_server = {id: net.id}
+    obj.save
+
+    expect(obj.id.nil?).to be(false)
+    # end
   end
 
   it "is destroyable" do

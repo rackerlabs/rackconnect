@@ -22,8 +22,8 @@ module Rackconnect::BulkNodes
     def remove_nodes(ids)
       body = ids.inject({}) do |hash, id|
         hash.merge({
-          cloud_server: {id: id},
-          server_group: {id: self.id}
+                     cloud_server: {id: id},
+                     server_group: {id: self.id}
         }).to_json
       end
 
