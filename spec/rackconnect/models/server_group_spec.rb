@@ -10,7 +10,7 @@ describe Rackconnect::ServerGroup do
   end
 
   it "is indexable" do
-    expect(server_groups.count).to eq(2)
+    expect(server_groups.count).to eq(3)
   end
 
   it "is findable" do

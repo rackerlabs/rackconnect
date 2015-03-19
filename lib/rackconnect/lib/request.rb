@@ -52,7 +52,7 @@ class Rackconnect::Request
         raise "The verb '#{@verb}' is not recognized."
       end
 
-      self.body = JSON.parse(resp) unless resp.code == 204
+      self.body = JSON.parse(resp) if resp.length >= 2
     end
   rescue RestClient::Exception => e
     raise self.show_error(e)

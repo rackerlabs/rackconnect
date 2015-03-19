@@ -11,7 +11,7 @@ describe Rackconnect::CloudNetwork do
   end
 
   it "is indexable" do
-    expect(networks.count).to eq(2)
+    expect(networks.count).to eq(1)
   end
 
   it "is findable" do

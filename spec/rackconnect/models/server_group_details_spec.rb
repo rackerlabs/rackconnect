@@ -6,7 +6,7 @@ describe Rackconnect::ServerGroupDetails do
   end
 
   it "is findable" do
-    expect(server_group_details.count).to eq(3)
+    expect(server_group_details.count).to eq(1)
   end
 
 end

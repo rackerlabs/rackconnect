@@ -8,11 +8,11 @@ before do
 end
 
 get '/v3/:tenant_id/cloud_networks' do
-  respond_with :cloud_server, :index
+  respond_with :cloud_network, :index
 end
 
 get '/v3/:tenant_id/cloud_networks/:id' do
-  respond_with :cloud_server, :show
+  respond_with :cloud_network, :show
 end
 
 get '/v3/:tenant_id/load_balancer_pools' do
@@ -32,7 +32,11 @@ post '/v3/:tenant_id/load_balancer_pools/:id/nodes' do
 end
 
 get '/v3/:tenant_id/load_balancer_pools/:id/nodes/details' do
-  respond_with :node, :details
+  if params[:cloud_server_id]
+    respond_with :node, :bulk_details
+  else
+    respond_with :node, :details
+  end
 end
 
 get '/v3/:tenant_id/load_balancer_pools/:load_balancer_pool_id/nodes/:id' do
@@ -55,23 +59,19 @@ delete '/v3/:tenant_id/load_balancer_pools/nodes' do
   ""
 end
 
-get '/v3/:tenant_id/load_balancer_pools/nodes/details?cloud_server_id=:cloud_server_id' do
-  respond_with :node, :buld_details
-end
-
 get '/v3/:tenant_id/public_ips' do
-  respond_with :public_ip, :index
+  if params[:cloud_server_id]
+    respond_with :public_ip, :bulk_index
+  else
+    respond_with :public_ip, :index
+  end
 end
 
 post '/v3/:tenant_id/public_ips' do
   respond_with :public_ip, :create
 end
 
-get '/v3/:tenant_id/public_ips?cloud_server_id=:cloud_server_id' do
-  respond_with :public_ip, :bulk_index
-end
-
-post '/v3/:tenant_id/public_ips/:id' do
+get '/v3/:tenant_id/public_ips/:id' do
   respond_with :public_ip, :show
 end
 
@@ -127,7 +127,7 @@ delete '/v3/:tenant_id/server_groups/nodes' do
   ""
 end
 
-get '/v3/:tenant_id/server_groups/nodes/details?cloud_server_id=:cloud_server_id' do
+get '/v3/:tenant_id/server_groups/nodes/details' do
   respond_with :server_group, :bulk_details
 end
 

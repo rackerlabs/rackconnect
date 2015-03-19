@@ -10,7 +10,7 @@ describe Rackconnect::PublicIP do
   end
 
   it "is indexable" do
-    expect(public_ips.count).to eq(9)
+    expect(public_ips.count).to eq(1)
   end
 
   it "is findable" do
@@ -18,7 +18,7 @@ describe Rackconnect::PublicIP do
   end
 
   it "can get details for a server" do
-    expect(Rackconnect::PublicIP.for_server(public_ip.id)).to eq([])
+    expect(Rackconnect::PublicIP.for_server(public_ip.id).class).to eq(Array)
   end
 
   it "is creatable" do
