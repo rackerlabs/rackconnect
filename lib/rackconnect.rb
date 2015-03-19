@@ -1,7 +1,7 @@
 module Rackconnect
 
   class << self
-    attr_accessor :token, :tenant_id, :url
+    attr_accessor :token, :tenant_id, :url, :testing
   end
 
 end

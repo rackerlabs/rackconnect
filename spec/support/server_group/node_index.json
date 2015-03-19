@@ -1,0 +1,41 @@
+  [
+    {
+      "created": "2014-05-30T03:23:42Z",
+      "cloud_server": {
+        "id": "d95ae0c4-6ab8-4873-b82f-f8433840cff2"
+      },
+      "id": "61dd2626-ae0d-4a64-b59e-c54e101dbe22",
+      "server_group": {
+        "id": "5a79cb9a-f086-4714-8d5f-cd3b31e6687a"
+      },
+      "status": "ACTIVE",
+      "status_detail": null,
+      "updated": "2014-05-30T03:24:18Z"
+    },
+    {
+      "created": "2014-05-31T08:23:12Z",
+      "cloud_server": {
+        "id": "f28b870f-a063-498a-8b12-7025e5b1caa6"
+      },
+      "id": "a3f253a1-cc61-42a6-9da8-34f1dc8efb26",
+      "server_group": {
+        "id": "5a79cb9a-f086-4714-8d5f-cd3b31e6687a"
+      },
+      "status": "ADDING",
+      "status_detail": null,
+      "updated": "2014-05-31T08:23:26Z"
+    },
+    {
+      "created": "2014-05-31T08:23:18Z",
+      "cloud_server": {
+        "id": "a3d3a6b3-e4e4-496f-9a3d-5c987163e458"
+      },
+      "id": "d1f7fd63-d8cc-45f2-845b-482b5cb99f91",
+      "server_group": {
+        "id": "5a79cb9a-f086-4714-8d5f-cd3b31e6687a"
+      },
+      "status": "ADD_FAILED",
+      "status_detail": "Unable to communicate with network device",
+      "updated": "2014-05-31T08:24:36Z"
+    }
+  ]

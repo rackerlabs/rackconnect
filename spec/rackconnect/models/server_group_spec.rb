@@ -2,15 +2,11 @@ require 'spec_helper'
 
 describe Rackconnect::ServerGroup do
   let(:server_groups) do
-    VCR.use_cassette('server_groups') do
-      Rackconnect::ServerGroup.all
-    end
+    Rackconnect::ServerGroup.all
   end
 
   let(:server_group) do
-    VCR.use_cassette('server_group') do
-      Rackconnect::ServerGroup.find(server_groups.first.id)
-    end
+    Rackconnect::ServerGroup.find(server_groups.first.id)
   end
 
   it "is indexable" do
@@ -22,32 +18,24 @@ describe Rackconnect::ServerGroup do
   end
 
   it "is creatable" do
-    VCR.use_cassette('server_group_create') do
-      # TODO: This is a bit bothersome?
-      obj = Rackconnect::ServerGroup.create({})
-      expect(obj.id.nil?).to be(false)
-    end
+    # TODO: This is a bit bothersome?
+    obj = Rackconnect::ServerGroup.create({})
+    expect(obj.id.nil?).to be(false)
   end
 
   it "is destroyable" do
-    VCR.use_cassette('server_group_destroy') do
-      expect(server_group.destroy).to be(true)
-    end
+    expect(server_group.destroy).to be(true)
   end
 
   it "can bulk add nodes" do
-    VCR.use_cassette('server_group_bulk_add_nodes') do
-      nodes = server_group.add_nodes(["d95ae0c4-6ab8-4873-b82f-f8433840cff2"])
-      expect(nodes.count).to eq(2)
-    end
+    nodes = server_group.add_nodes(["d95ae0c4-6ab8-4873-b82f-f8433840cff2"])
+    expect(nodes.count).to eq(2)
   end
 
   it "can bulk remove nodes" do
-    VCR.use_cassette('server_group_bulk_remove_nodes') do
-      nodes = server_group.add_nodes(["d95ae0c4-6ab8-4873-b82f-f8433840cff2"])
-      resp = server_group.remove_nodes(["d95ae0c4-6ab8-4873-b82f-f8433840cff2"])
-      expect(resp).to eq(true)
-    end
+    nodes = server_group.add_nodes(["d95ae0c4-6ab8-4873-b82f-f8433840cff2"])
+    resp = server_group.remove_nodes(["d95ae0c4-6ab8-4873-b82f-f8433840cff2"])
+    expect(resp).to eq(true)
   end
 
 end

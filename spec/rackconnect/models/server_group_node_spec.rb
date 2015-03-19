@@ -2,15 +2,11 @@ require 'spec_helper'
 
 describe Rackconnect::ServerGroupNode do
   let(:server_group_nodes) do
-    VCR.use_cassette('server_group_nodes') do
-      Rackconnect::ServerGroupNode.all
-    end
+    Rackconnect::ServerGroupNode.all
   end
 
   let(:server_group_node) do
-    VCR.use_cassette('server_group_node') do
-      Rackconnect::ServerGroupNode.find(server_group_nodes.first.id)
-    end
+    Rackconnect::ServerGroupNode.find(server_group_nodes.first.id)
   end
 
   it "is indexable" do
@@ -22,17 +18,13 @@ describe Rackconnect::ServerGroupNode do
   end
 
   it "is creatable" do
-    VCR.use_cassette('sgnn_create') do
-      # TODO: This is a bit bothersome?
-      obj = Rackconnect::ServerGroupNode.create({})
-      expect(obj.id.nil?).to be(false)
-    end
+    # TODO: This is a bit bothersome?
+    obj = Rackconnect::ServerGroupNode.create({})
+    expect(obj.id.nil?).to be(false)
   end
 
   it "is destroyable" do
-    VCR.use_cassette('server_group_node_destroy') do
-      expect(server_group_node.destroy).to be(true)
-    end
+    expect(server_group_node.destroy).to be(true)
   end
 
 end

@@ -2,9 +2,7 @@ require 'spec_helper'
 
 describe Rackconnect::ServerGroupDetails do
   let(:server_group_details) do
-    VCR.use_cassette('server_group_details') do
-      Rackconnect::ServerGroupDetails.all
-    end
+    Rackconnect::ServerGroupDetails.all
   end
 
   it "is findable" do

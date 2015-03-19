@@ -2,15 +2,11 @@ require 'spec_helper'
 
 describe Rackconnect::LoadBalancerPoolNodeDetails do
   let(:load_balancer_pool_node_details) do
-    VCR.use_cassette('load_balancer_pool_node_details') do
-      Rackconnect::Cloudload_balancer_pool_detail.all
-    end
+    Rackconnect::Cloudload_balancer_pool_detail.all
   end
 
   let(:load_balancer_pool_detail) do
-    VCR.use_cassette('load_balancer_pool_detail') do
-      Rackconnect::Cloudload_balancer_pool_detail.find(load_balancer_pool_node_details.first.id)
-    end
+    Rackconnect::Cloudload_balancer_pool_detail.find(load_balancer_pool_node_details.first.id)
   end
 
   it "is indexable" do

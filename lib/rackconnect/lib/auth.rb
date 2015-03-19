@@ -19,6 +19,7 @@ class Rackconnect::Auth
 
     Rackconnect.token     = body["access"]["token"]["id"]
     Rackconnect.tenant_id = body["access"]["token"]["tenant"]["id"]
+    Rackconnect.testing   = ENV['RACKCONNECT_MOCK'] == "true"
     Rackconnect.url       = set_url(body, region)
   end
 
@@ -29,12 +30,18 @@ class Rackconnect::Auth
   private
 
   def set_url(body, region=nil)
-    eps = body["access"]["serviceCatalog"].find{ |eps| eps["name"] == "rackconnect" }["endpoints"]
-
-    if region.nil?
-      eps.first["publicURL"]
+    if Rackconnect.testing
+      "http://localhost:7000/v3/930035"
     else
-      eps.find{ |ep| ep["region"] == region}["publicURL"]
+      eps = body["access"]["serviceCatalog"].find do |eps|
+        eps["name"] == "rackconnect"
+      end["endpoints"]
+
+      if region.nil?
+        eps.first["publicURL"]
+      else
+        eps.find{ |ep| ep["region"] == region}["publicURL"]
+      end
     end
   end
 end

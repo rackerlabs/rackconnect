@@ -2,33 +2,23 @@ require 'spec_helper'
 
 describe Rackconnect::ServerGroupNodeDetails do
   let(:server_groups) do
-    VCR.use_cassette('server_groups') do
-      Rackconnect::ServerGroup.all
-    end
+    Rackconnect::ServerGroup.all
   end
 
   let(:server_group) do
-    VCR.use_cassette('server_group') do
-      Rackconnect::ServerGroup.find(server_groups.first.id)
-    end
+    Rackconnect::ServerGroup.find(server_groups.first.id)
   end
 
   let(:server_group_nodes) do
-    VCR.use_cassette('server_group_nodes') do
-      Rackconnect::ServerGroupNode.all
-    end
+    Rackconnect::ServerGroupNode.all
   end
 
   let(:server_group_node) do
-    VCR.use_cassette('server_group_node') do
-      Rackconnect::ServerGroupNode.find(server_group_nodes.first.id)
-    end
+    Rackconnect::ServerGroupNode.find(server_group_nodes.first.id)
   end
 
   let(:server_group_node_details) do
-    VCR.use_cassette('server_group_node_details') do
-      Rackconnect::ServerGroupNodeDetails.all(group_id: server_group.id, node_id: server_group_node.id)
-    end
+    Rackconnect::ServerGroupNodeDetails.all(group_id: server_group.id, node_id: server_group_node.id)
   end
 
   it "is gettable" do
@@ -36,10 +26,8 @@ describe Rackconnect::ServerGroupNodeDetails do
   end
 
   it "can get details for a server" do
-    VCR.use_cassette('sgnd_for_server') do
-      id = "07426958-1ebf-4c38-b032-d456820ca21a"
-      expect(Rackconnect::ServerGroupNodeDetails.for_server(id).created.nil?).to eq(false)
-    end
+    id = "07426958-1ebf-4c38-b032-d456820ca21a"
+    expect(Rackconnect::ServerGroupNodeDetails.for_server(id).created.nil?).to eq(false)
   end
 
 end

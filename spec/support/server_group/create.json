@@ -1,0 +1,12 @@
+  {
+    "id": "5a79cb9a-f086-4714-8d5f-cd3b31e6687a",
+    "name": "RC-TestGroup1",
+    "node_counts": {
+      "cloud_servers": 0,
+      "external": 0,
+      "total": 0
+    },
+    "status": "ADDING",
+    "status_detail": null,
+    "updated": null
+  }

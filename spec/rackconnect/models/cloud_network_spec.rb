@@ -3,15 +3,11 @@ require 'spec_helper'
 describe Rackconnect::CloudNetwork do
 
   let(:networks) do
-    VCR.use_cassette('networks') do
-      Rackconnect::CloudNetwork.all
-    end
+    Rackconnect::CloudNetwork.all
   end
 
   let(:network) do
-    VCR.use_cassette('network') do
-      Rackconnect::CloudNetwork.find(networks.first.id)
-    end
+    Rackconnect::CloudNetwork.find(networks.first.id)
   end
 
   it "is indexable" do
