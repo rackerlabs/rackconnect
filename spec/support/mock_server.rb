@@ -59,6 +59,10 @@ delete '/v3/:tenant_id/load_balancer_pools/nodes' do
   ""
 end
 
+get '/v3/:tenant_id/load_balancer_pools/nodes/details' do
+  respond_with :load_balancer_pool, :nodes
+end
+
 get '/v3/:tenant_id/public_ips' do
   if params[:cloud_server_id]
     respond_with :public_ip, :bulk_index
@@ -116,7 +120,7 @@ delete '/v3/:tenant_id/server_groups/:server_group_id/nodes/:id' do
 end
 
 get '/v3/:tenant_id/server_groups/:server_group_id/nodes/:id/details' do
-  respond_with :server_group, :show_node_details
+  respond_with :server_group, :node_show_details
 end
 
 post '/v3/:tenant_id/server_groups/nodes' do

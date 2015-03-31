@@ -7,18 +7,15 @@ module Rackconnect::Model
 
   module InstanceMethods
     def initialize(options={})
-      if options[:json] != nil && options[:json].is_a?(Hash)
+      if options[:json] != nil
         options[:json].each do |(k,v)|
           self.send("#{k}=", v)
         end
-      else
-        puts caller_locations
-        raise "Expected a JSON hash, not Array"
       end
     end
 
     def save
-      path = self.class.instance_variable_get("@_endpoint")
+      path = self.class.callable_endpoint
 
       if self.id.nil?
         resp = Rackconnect::Request.post(path, body: self.to_json)
@@ -27,7 +24,9 @@ module Rackconnect::Model
         resp = Rackconnect::Request.put(path, body: self.to_json)
       end
 
-      self.new(json: resp.body)
+      resp.body.each{ |(k,v)| self.send("#{k}=", v) }
+
+      self
     end
 
     def destroy

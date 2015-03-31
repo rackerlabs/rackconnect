@@ -1,7 +1,6 @@
 module Rackconnect::BulkableModel
 
   def self.included(base)
-    base.send :include, Rackconnect::Model
     base.send :include, InstanceMethods
     base.extend ClassMethods
   end

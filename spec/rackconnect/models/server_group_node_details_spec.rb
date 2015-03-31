@@ -27,7 +27,7 @@ describe Rackconnect::ServerGroupNodeDetails do
 
   it "can get details for a server" do
     id = "07426958-1ebf-4c38-b032-d456820ca21a"
-    expect(Rackconnect::ServerGroupNodeDetails.for_server(id).created.nil?).to eq(false)
+    expect(Rackconnect::ServerGroupNodeDetails.for_server(id).first["created"].nil?).to eq(false)
   end
 
 end

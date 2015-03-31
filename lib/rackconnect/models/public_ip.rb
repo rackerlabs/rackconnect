@@ -1,4 +1,5 @@
 class Rackconnect::PublicIP
+  include Rackconnect::Model
   include Rackconnect::BulkableModel
 
   endpoint  "/public_ips"

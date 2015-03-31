@@ -12,8 +12,13 @@ module Rackconnect::SingletonModel
   module ClassMethods
     def all(*args)
       apply(args)
-      resp = Rackconnect::Request.get(@_endpoint)
-      self.new(json: resp.body)
+      resp = Rackconnect::Request.get(callable_endpoint)
+
+      if resp.body.is_a?(Array)
+        resp.body.map{ |b| self.new(json: b) }
+      else
+        self.new(json: resp.body)
+      end
     end
   end
 end
