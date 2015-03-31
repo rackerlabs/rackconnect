@@ -7,10 +7,13 @@ module Rackconnect::Model
 
   module InstanceMethods
     def initialize(options={})
-      if options[:json] != nil
+      if options[:json] != nil && options[:json].is_a?(Hash)
         options[:json].each do |(k,v)|
           self.send("#{k}=", v)
         end
+      else
+        puts caller_locations
+        raise "Expected a JSON hash, not Array"
       end
     end
 
@@ -73,7 +76,7 @@ module Rackconnect::Model
       return first if first.is_a?(String)
 
       # Parent IDs, etc.
-      if first.is_a?(Array)
+      if first.is_a?(Hash)
         args.each do |(arg)|
           arg.each do |(k,v)|
             self.send("#{k}=", v)

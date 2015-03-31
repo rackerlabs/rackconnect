@@ -10,7 +10,7 @@ describe Rackconnect::LoadBalancerPoolNodeDetails do
   end
 
   let(:load_balancer_pool_nodes) do
-    Rackconnect::LoadBalancerPoolNode.all
+    Rackconnect::LoadBalancerPoolNode.all(pool_id: pool.id)
   end
 
   let(:load_balancer_pool_node) do

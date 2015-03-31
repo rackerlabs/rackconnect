@@ -1,13 +1,13 @@
-  {
-    "created": "2014-05-30T03:23:42Z",
-    "cloud_server": {
-      "id": "d95ae0c4-6ab8-4873-b82f-f8433840cff2"
-    },
-    "id": "1860451d-fb89-45b8-b54e-151afceb50e5",
-    "server_group": {
-      "id": "5a79cb9a-f086-4714-8d5f-cd3b31e6687a"
-    },
-    "status": "ACTIVE",
-    "status_detail": null,
-    "updated": "2014-05-30T03:24:18Z"
-  }
+{
+  "created": "2014-05-30T03:23:42Z",
+  "cloud_server": {
+    "id": "d95ae0c4-6ab8-4873-b82f-f8433840cff2"
+  },
+  "id": "1860451d-fb89-45b8-b54e-151afceb50e5",
+  "server_group": {
+    "id": "5a79cb9a-f086-4714-8d5f-cd3b31e6687a"
+  },
+  "status": "ACTIVE",
+  "status_detail": null,
+  "updated": "2014-05-30T03:24:18Z"
+}

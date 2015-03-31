@@ -2,7 +2,8 @@ require 'spec_helper'
 
 describe Rackconnect::LoadBalancerPoolNode do
   let(:load_balancer_pool_nodes) do
-    Rackconnect::LoadBalancerPoolNode.all
+    pool = Rackconnect::LoadBalancerPool.all.first
+    Rackconnect::LoadBalancerPoolNode.all(pool_id: pool.id)
   end
 
   let(:load_balancer_pool_node) do

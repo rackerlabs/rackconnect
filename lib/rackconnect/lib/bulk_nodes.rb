@@ -16,7 +16,7 @@ module Rackconnect::BulkNodes
 
       path = self.class.instance_variable_get("@_endpoint") + "/nodes" # sorry
       resp = Rackconnect::Request.post(path, body: body)
-      resp.body.map{ |obj| node_class.new(json: obj) }
+      resp.body.map{ |b| node_class.new(json: b) }
     end
 
     def remove_nodes(ids)
