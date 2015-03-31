@@ -42,7 +42,11 @@ class Rackconnect::Request
     elsif @verb.nil? || @path.nil?
       raise "Need verb and path (Rackconnect::Request.new({verb: :get, path: \"google.com\"}))"
     else
-      @url = Rackconnect.url + @path
+      if @path.is_a?(Proc) # Might need url vars inserted
+        @url = Rackconnect.url + @path.call
+      else
+        @url = Rackconnect.url + @path
+      end
 
       if @verb == :get || @verb == :delete
         resp = RestClient.send(@verb, @url, @headers)

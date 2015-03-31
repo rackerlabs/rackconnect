@@ -10,7 +10,7 @@ describe Rackconnect::ServerGroupNodeDetails do
   end
 
   let(:server_group_nodes) do
-    Rackconnect::ServerGroupNode.all
+    Rackconnect::ServerGroupNode.all(group_id: server_groups.first.id)
   end
 
   let(:server_group_node) do

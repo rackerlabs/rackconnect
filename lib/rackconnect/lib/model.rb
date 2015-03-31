@@ -31,14 +31,14 @@ module Rackconnect::Model
     end
 
     def destroy
-      path = self.class.instance_variable_get("@_endpoint") + "/#{self.id}" # sorry
+      path = self.class.callable_endpoint + "/#{self.id}" # sorry
       resp = Rackconnect::Request.delete(path)
     end
   end
 
   module ClassMethods
     def endpoint(str=nil, options={}, &block)
-      @_endpoint = block_given? ? yield(block) : str
+      @_endpoint = block_given? ? block : str
     end
 
     def endpoint_vars(*args)
@@ -50,20 +50,28 @@ module Rackconnect::Model
       attr_accessor *args
     end
 
+    def callable_endpoint
+      if @_endpoint.is_a?(Proc)
+        @_endpoint.call # Get URL vars in when we need them.
+      else
+        @_endpoint
+      end
+    end
+
     def all(*args)
       apply(args)
-      resp = Rackconnect::Request.get(@_endpoint)
+      resp = Rackconnect::Request.get(callable_endpoint)
       resp.body.map{ |obj| self.new(json: obj) }
     end
 
     def find(*args)
       id = apply(args)
-      resp = Rackconnect::Request.get("#{@_endpoint}/#{id}")
+      resp = Rackconnect::Request.get("#{callable_endpoint}/#{id}")
       self.new(json: resp.body)
     end
 
     def create(options={})
-      resp = Rackconnect::Request.post(@_endpoint, body: options.to_json)
+      resp = Rackconnect::Request.post(callable_endpoint, body: options.to_json)
       self.new(json: resp.body)
     end
 
