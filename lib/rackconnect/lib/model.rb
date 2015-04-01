@@ -30,7 +30,7 @@ module Rackconnect::Model
     end
 
     def destroy
-      path = self.class.callable_endpoint + "/#{self.id}" # sorry
+      path = self.class.callable_endpoint + "/#{self.id}"
       resp = Rackconnect::Request.delete(path)
     end
   end
