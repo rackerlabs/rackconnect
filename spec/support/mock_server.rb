@@ -1,10 +1,21 @@
 require 'sinatra'
+require 'sinatra/param'
+require 'rack'
+require 'rack/contrib'
 
 set :server, :thin
 set :port, 7000
 
+use Rack::PostBodyContentTypeParser
+use Rack::NestedParams
+
+helpers Sinatra::Param
+
+UUID = /[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/
+
+
 before do
-  content_type 'application/json'
+  content_type :json
 end
 
 get '/v3/:tenant_id/cloud_networks' do
@@ -28,6 +39,8 @@ get '/v3/:tenant_id/load_balancer_pools/:id/nodes' do
 end
 
 post '/v3/:tenant_id/load_balancer_pools/:id/nodes' do
+  param :cloud_server, Hash, required: true, has_keys: [:id]
+
   respond_with :node, :create
 end
 

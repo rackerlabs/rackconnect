@@ -1,9 +1,12 @@
 require 'spec_helper'
 
 describe Rackconnect::LoadBalancerPoolNode do
+  let(:load_balancer_pool) do
+    Rackconnect::LoadBalancerPool.all.first
+  end
+
   let(:load_balancer_pool_nodes) do
-    pool = Rackconnect::LoadBalancerPool.all.first
-    Rackconnect::LoadBalancerPoolNode.all(pool_id: pool.id)
+    Rackconnect::LoadBalancerPoolNode.all(pool_id: load_balancer_pool.id)
   end
 
   let(:load_balancer_pool_node) do
@@ -19,8 +22,7 @@ describe Rackconnect::LoadBalancerPoolNode do
   end
 
   it "is creatable" do
-    # TODO: This is a bit bothersome?
-    obj = Rackconnect::LoadBalancerPoolNode.create({})
+    obj = Rackconnect::LoadBalancerPoolNode.create({pool_id: load_balancer_pool.id})
     expect(obj.id.nil?).to be(false)
   end
 

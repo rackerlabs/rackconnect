@@ -23,6 +23,8 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "pry"
   spec.add_development_dependency "rspec"
   spec.add_development_dependency "sinatra"
+  spec.add_development_dependency "sinatra-param"
+  spec.add_development_dependency "rack-contrib"
   spec.add_development_dependency "thin"
 
   spec.add_dependency "activesupport"
