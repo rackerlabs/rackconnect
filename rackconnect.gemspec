@@ -12,7 +12,6 @@ Gem::Specification.new do |spec|
   spec.description   = "API Wrapper for RackConnect v3 service from Rackspace"
   spec.homepage      = ""
   spec.license       = "MIT"
-  spec.metadata      = "Some metadata for you"
 
   spec.files         = `git ls-files -z`.split("\x0")
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
