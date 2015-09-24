@@ -14,7 +14,7 @@ Rackconnect follows an ActiveModel-esque pattern that most rubyists will feel fa
 	})
 
 	# Get an array of your CloudNetworks
-	networks = Rackconnect::CloudNetworks.all
+	networks = Rackconnect::CloudNetwork.all
 
 	network = Rackconnect::CloudNetwork.find(UUID)
 
