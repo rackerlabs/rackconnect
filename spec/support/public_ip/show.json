@@ -18,5 +18,7 @@
   "public_ip_v4": "203.0.113.110",
   "status": "ACTIVE",
   "status_detail": null,
-  "updated": "2014-05-30T03:24:18Z"
+  "updated": "2014-05-30T03:24:18Z",
+  "retain": false,
+  "added_by_match_rule": false
 }
