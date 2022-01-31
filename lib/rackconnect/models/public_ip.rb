@@ -7,6 +7,6 @@ class Rackconnect::PublicIP
 
   attributes :created, :cloud_server, :id, :public_ip_v4,
     :status, :status_detail, :updated, :configuration_to_cloud_account_uuid,
-    :retain, :failure_core_ticket_uuid
+    :retain, :failure_core_ticket_uuid, :added_by_match_rule
 
 end
